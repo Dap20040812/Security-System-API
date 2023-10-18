@@ -36,4 +36,10 @@ public class User {
     )
     private List<Permission> permissions;
 
+    public User(String firstName, String lastName, String password, String charge) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        Password = password;
+        this.charge = charge;
+    }
 }
