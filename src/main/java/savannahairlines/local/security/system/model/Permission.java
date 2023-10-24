@@ -19,14 +19,8 @@ public class Permission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
 
-    private String Type;
+    private String type;
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "areaId")
-    private Area area;
+    private String name;
 
 }
