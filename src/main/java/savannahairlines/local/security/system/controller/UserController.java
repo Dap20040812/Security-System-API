@@ -2,6 +2,7 @@ package savannahairlines.local.security.system.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import savannahairlines.local.security.system.controller.dto.AddPermissionDTO;
 import savannahairlines.local.security.system.controller.dto.UserDTO;
 import savannahairlines.local.security.system.model.User;
 import savannahairlines.local.security.system.service.UserService;
@@ -26,6 +27,11 @@ public class UserController {
     @GetMapping("/user")
     public Iterable<User> getAllUsers(){
         return userService.getAllUsers();
+    }
+
+    @PutMapping("/user/permission")
+    public boolean addPermission(@RequestBody AddPermissionDTO addPermissionDTO){
+    	return userService.addPermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
     }
 
 }

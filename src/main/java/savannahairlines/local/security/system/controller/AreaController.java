@@ -2,6 +2,7 @@ package savannahairlines.local.security.system.controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import savannahairlines.local.security.system.controller.dto.AddPermissionDTO;
 import savannahairlines.local.security.system.controller.dto.AreaDTO;
 import savannahairlines.local.security.system.model.Area;
 import savannahairlines.local.security.system.service.AreaService;
@@ -28,6 +29,11 @@ public class AreaController {
     @GetMapping("/area/{id}")
     public Area getAreaById(@PathVariable int id){
         return areaService.getAreaById(id);
+    }
+
+    @PutMapping("/area/permission")
+    public boolean addPermission(@RequestBody AddPermissionDTO addPermissionDTO){
+        return areaService.addPermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
     }
 
 }

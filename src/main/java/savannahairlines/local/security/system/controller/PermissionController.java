@@ -6,6 +6,8 @@ import savannahairlines.local.security.system.controller.dto.PermissionDTO;
 import savannahairlines.local.security.system.model.Permission;
 import savannahairlines.local.security.system.service.PermissionService;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api")
@@ -24,7 +26,7 @@ public class PermissionController {
     }
 
     @GetMapping("/permission")
-    public Iterable<Permission> getAllPermissions(){
+    public List<Permission> getAllPermissions(){
         return permissionService.getAllPermissions();
     }
 }
