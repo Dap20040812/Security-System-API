@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "`PERMISSION`")
 @Data
@@ -19,14 +21,8 @@ public class Permission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int id;
 
-    private String Type;
+    private String type;
 
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
-
-    @ManyToOne
-    @JoinColumn(name = "areaId")
-    private Area area;
+    private String name;
 
 }

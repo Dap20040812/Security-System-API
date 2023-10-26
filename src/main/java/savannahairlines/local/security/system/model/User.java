@@ -24,7 +24,9 @@ public class User {
 
     private String lastName;
 
-    private String Password;
+    private String password;
+
+    private String email;
 
     private String charge;
 
