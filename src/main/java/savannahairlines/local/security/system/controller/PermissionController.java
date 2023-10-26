@@ -14,17 +14,17 @@ import java.util.List;
 public class PermissionController {
 
     private PermissionService permissionService;
-
+    @CrossOrigin("*")
     @PostMapping("/permission")
     public Permission createPermission(@RequestBody PermissionDTO permissionDTO){
         return permissionService.createPermission(permissionDTO.getType(), permissionDTO.getName());
     }
-
+    @CrossOrigin("*")
     @GetMapping("/permission/{id}")
     public Permission getPermissionById(@PathVariable int id){
         return permissionService.getPermissionById(id);
     }
-
+    @CrossOrigin("*")
     @GetMapping("/permission")
     public List<Permission> getAllPermissions(){
         return permissionService.getAllPermissions();
