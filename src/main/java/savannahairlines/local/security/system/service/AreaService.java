@@ -42,4 +42,12 @@ public class AreaService {
     	areaRepository.save(area);
     	return true;
     }
+
+    public boolean removePermission (int areaId, int permissionId) {
+    	Area area = areaRepository.findById(areaId).orElseThrow();
+        Permission permission = permissionService.getPermissionById(permissionId);
+    	area.getPermissions().remove(permission);
+    	areaRepository.save(area);
+    	return true;
+    }
 }

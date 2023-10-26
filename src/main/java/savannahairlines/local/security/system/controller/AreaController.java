@@ -36,4 +36,9 @@ public class AreaController {
         return areaService.addPermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
     }
 
+    @DeleteMapping("/area/permission")
+    public boolean removePermission(@RequestBody AddPermissionDTO addPermissionDTO){
+        return areaService.removePermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
+    }
+
 }
