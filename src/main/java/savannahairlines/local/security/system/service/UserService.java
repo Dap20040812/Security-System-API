@@ -45,4 +45,16 @@ public class UserService {
     	userRepository.save(user);
     	return true;
     }
+
+    public boolean removePermission (int userId, int permissionId) {
+    	User user = userRepository.findById(userId).orElseThrow();
+        Permission permission = permissionService.getPermissionById(permissionId);
+    	user.getPermissions().remove(permission);
+    	userRepository.save(user);
+    	return true;
+    }
+
+    public User getUserByEmailAndPassword(String email, String password) {
+    	return userRepository.findByEmailAndPassword(email, password);
+    }
 }

@@ -31,7 +31,19 @@ public class UserController {
 
     @PutMapping("/user/permission")
     public boolean addPermission(@RequestBody AddPermissionDTO addPermissionDTO){
-    	return userService.addPermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
+        return userService.addPermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
     }
+
+    @DeleteMapping("/user/permission")
+    public boolean removePermission(@RequestBody AddPermissionDTO addPermissionDTO){
+        return userService.removePermission(addPermissionDTO.getId(), addPermissionDTO.getPermissionId());
+    }
+
+    @GetMapping("/user/login")
+    public User getUserByEmailAndPassword(@RequestParam String email, @RequestParam String password){
+        return userService.getUserByEmailAndPassword(email, password);
+    }
+
+
 
 }
