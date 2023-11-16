@@ -29,4 +29,9 @@ public class PermissionController {
     public List<Permission> getAllPermissions(){
         return permissionService.getAllPermissions();
     }
+    @CrossOrigin("*")
+    @GetMapping("/permission/verify")
+    public boolean verifyPermission(@RequestParam int userId, @RequestParam int areaId){
+        return permissionService.verifyPermission(userId, areaId);
+    }
 }
